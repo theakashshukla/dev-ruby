@@ -1,0 +1,10 @@
+# Use the official PostgreSQL image as the base image
+FROM postgres:13
+
+# Set environment variables for PostgreSQL
+ENV POSTGRES_DB devd_development
+ENV POSTGRES_USER akki
+ENV POSTGRES_PASSWORD akash
+
+# Expose the default PostgreSQL port
+EXPOSE 5432

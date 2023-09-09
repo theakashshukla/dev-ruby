@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devd
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devd
+  template:
+    metadata:
+      labels:
+        app: devd
+    spec:
+      containers:
+      - name: devd
+        image: devd:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: DEVD_ENV
+          value: production
+        # Add other environment variables as needed
